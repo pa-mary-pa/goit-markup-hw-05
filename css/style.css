@@ -489,8 +489,10 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .modal-open {
@@ -503,12 +505,26 @@ h6 {
   width: 24px;
   height: 24px;
   margin-bottom: 24px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-open:hover {
+.modal-open:hover,
+.modal-open:focus {
   background-color: #404bbf;
+  border: none;
 }
-.modal-open:hover .modal-btn-close-icon {
+.modal-open:hover .modal-btn-close-icon,
+.modal-open:focus .modal-btn-close-icon {
   fill: #fff;
 }
 
@@ -534,7 +550,7 @@ h6 {
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
   outline: transparent;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-label {
   font-weight: 400;
@@ -544,10 +560,11 @@ h6 {
   color: #8e8f99;
   display: block;
   margin-bottom: 4px;
+  line-height: 1.17;
 }
 
 .modal-field {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 .backdrop:not.is-open .modal {
   transform: translate(-50%, -50%) scale(1.5);
@@ -575,16 +592,22 @@ h6 {
 .modal-textarea {
   resize: none;
   width: 100%;
-  height: 138px;
   background-color: transparent;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   padding: 8px 16px;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16667;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
+  height: 120px;
+  line-height: 1.17;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea:focus {
+  border-color: #4d5ae5;
 }
 .modal-textarea::placeholder {
   font-size: 12px;
@@ -607,7 +630,12 @@ h6 {
   letter-spacing: 0.04em;
   text-align: center;
   color: #fff;
+  min-width: 169px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn-close-icon {
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
