@@ -625,6 +625,9 @@ h6 {
 .modal-field {
   margin-bottom: 8px;
 }
+.modal-field-text {
+  margin-bottom: 16px;
+}
 .backdrop:not.is-open .modal {
   transform: translate(-50%, -50%) scale(1.5);
 }
