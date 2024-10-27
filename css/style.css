@@ -490,6 +490,9 @@ h6 {
   color: #ffffff;
 }
 
+.link-policy {
+  color: #4d5ae5;
+}
 .footer-form {
   margin-left: 80px;
 }
@@ -620,7 +623,7 @@ h6 {
 }
 
 .modal-field {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .backdrop:not.is-open .modal {
   transform: translate(-50%, -50%) scale(1.5);
